@@ -1,0 +1,16 @@
+
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	padding: 2rem 4rem 0.8rem 4rem;
+	gap: 2rem;
+	margin-bottom: 4rem;
+}
+
+
+.logo{
+	width: 16rem;
+	cursor: pointer;
+}
