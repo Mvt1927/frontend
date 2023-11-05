@@ -5,7 +5,7 @@ import { useAccount } from "wagmi";
 export default function NFTGallery({}) {
   const [nfts, setNfts] = useState();
   const [walletOrCollectionAddress, setWalletOrCollectionAddress] =
-    useState("mvt1927");
+    useState("0xBcd4042DE499D14e55001CcbB24a551F3b954096");
   const [fetchMethod, setFetchMethod] = useState("wallet");
   const [pageKey, setPageKey] = useState();
   const [spamFilter, setSpamFilter] = useState(true);
