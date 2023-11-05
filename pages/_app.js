@@ -16,14 +16,13 @@ import MainLayout from "../layout/mainLayout";
 const { chains, publicClient } = configureChains(
 	[mainnet, polygon,goerli,sepolia],
 	[
-		alchemyProvider({ apiKey: "4XsHh1worB0pSSkkl5u5QpUctsmaZIqS" }), 
+		alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_ALCHEMY_API_KEY }), 
 		publicProvider()
 	]
 );
-console.log(process.env.ALCHEMY_NETWORK)
 const { connectors } = getDefaultWallets({
 	appName: "test",
-	projectId: "ebbc17e8c0cd1819b8b5b90fd6a97938",
+	projectId: process.env.NEXT_PUBLIC_CLOUD_WALLETCONNECT_PROJECT_ID,
 	chains,
 });
 
@@ -33,12 +32,6 @@ const wagmiConfig = createConfig({
 	publicClient,
 })
 
-// const wagmiClient = createClient({
-// 	autoConnect: true,
-// 	connectors,
-// 	provider,
-// });
-
 export { WagmiConfig, RainbowKitProvider };
 function MyApp({ Component, pageProps }) {
 	return (
@@ -46,7 +39,7 @@ function MyApp({ Component, pageProps }) {
 			<RainbowKitProvider
 
 				modalSize="compact"
-				initialChain={"ETH_GOERLI"}
+				initialChain={process.env.NEXT_PUBLIC_ALCHEMY_NETWORK}
 				chains={chains}
 			>
 				<MainLayout>

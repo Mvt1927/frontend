@@ -10,7 +10,7 @@ export default async function handler(req, res) {
 	}
 
 	const settings = {
-		apiKey: process.env.ALCHEMY_API_KEY,
+		apiKey: process.env.NEXT_PUBLIC_ALCHEMY_API_KEY,
 		network: Network[chain],
 	};
 
@@ -26,7 +26,6 @@ export default async function handler(req, res) {
 		const formattedNfts = nfts.ownedNfts.map((nft) => {
 			const { contract, title, tokenType, tokenId, description, media } =
 				nft;
-			console.log(nft.media);
 			return {
 				contract: contract.address,
 				symbol: contract.symbol,

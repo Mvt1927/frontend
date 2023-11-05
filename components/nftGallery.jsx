@@ -18,7 +18,7 @@ export default function NFTGallery({}) {
     setPageKey()
     switch (e.target.value) {
       case "wallet":
-        setWalletOrCollectionAddress("mvt1927");
+        setWalletOrCollectionAddress("0xBcd4042DE499D14e55001CcbB24a551F3b954096");
 
         break;
       case "collection":
@@ -108,7 +108,7 @@ export default function NFTGallery({}) {
                 onChange={(e) => {
                   setChain(e.target.value);
                 }}
-                defaultValue={process.env.ALCHEMY_NETWORK}
+                defaultValue={process.env.NEXT_PUBLIC_ALCHEMY_NETWORK}
               >
                 <option value={"ETH_MAINNET"}>Mainnet</option>
                 <option value={"MATIC_MAINNET"}>Polygon</option>
